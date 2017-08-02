@@ -4,8 +4,7 @@ import { AddShoppingPage } from '../add-shopping/add-shopping';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { ShoppingItem } from '../../models/shopping-items/shopping-items.interface';
 import { AngularFireDatabase } from 'angularfire2/database';
-
-
+import { EditShoppingItemPage } from '../edit-shopping-item/edit-shopping-item';
 
 /**
  * Generated class for the ShoppinglistPage page.
@@ -43,6 +42,7 @@ export class ShoppinglistPage {
         {
           text: 'Edit',
           handler: () => {
+            this.navCtrl.push(EditShoppingItemPage, { shoppingItemId: shoppingItem.$key })
            //make hander sen user to edit item page along with a key as a param 
           }           
         },
